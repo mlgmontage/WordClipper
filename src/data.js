@@ -4,4 +4,9 @@ export default [
     description: "Greeting",
     done: false,
   },
+  {
+    word: "World",
+    description: "Universe",
+    done: false,
+  },
 ];

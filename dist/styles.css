@@ -11,6 +11,17 @@ body {
   background-color: #fee440 !important;
 }
 
+.input-box {
+  background-color: #fee440 !important;
+  border: 1px solid #000;
+  border-radius: 0;
+  height: 450px;
+}
+
+.input-box:focus {
+  border: 1px solid #000;
+}
+
 .nav-text {
   text-transform: uppercase;
   color: #000;

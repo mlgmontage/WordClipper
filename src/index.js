@@ -28,3 +28,14 @@ function next() {
 
 control_next.addEventListener("click", next);
 control_previous.addEventListener("click", previous);
+
+// YouTube style key-bindings
+document.addEventListener("keypress", (event) => {
+  if (event.key == "j") {
+    previous();
+  }
+
+  if (event.key == "l") {
+    next();
+  }
+});

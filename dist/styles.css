@@ -22,6 +22,15 @@ body {
   border: 1px solid #000;
 }
 
+.logo {
+  text-decoration: none;
+  color: #000;
+}
+
+.logo:hover {
+  color: #000;
+}
+
 .nav-text {
   text-transform: uppercase;
   color: #000;
@@ -43,4 +52,13 @@ body {
 /* Utils */
 .outline {
   outline: 1px solid #f00;
+}
+
+a.fa {
+  text-decoration: none;
+  color: #000;
+}
+
+a.fa:hover {
+  color: #000;
 }

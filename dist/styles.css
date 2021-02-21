@@ -11,6 +11,16 @@ body {
   background-color: #fee440 !important;
 }
 
+.nav-text {
+  text-transform: uppercase;
+  color: #000;
+}
+
+.nav-text:hover {
+  color: #000;
+  text-decoration: none;
+}
+
 /* Utils */
 .outline {
   outline: 1px solid #f00;

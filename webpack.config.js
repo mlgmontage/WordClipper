@@ -22,6 +22,11 @@ module.exports = {
         test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/,
         use: ["file-loader"],
       },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ["babel-loader"],
+      },
     ],
   },
 };

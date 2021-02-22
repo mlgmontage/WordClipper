@@ -13,7 +13,10 @@
     "dev": "webpack-dev-server"
   },
   "dependencies": {
+    "css-loader": "^5.0.2",
+    "file-loader": "^6.2.0",
     "font-awesome": "^4.7.0",
-    "skeleton-css": "^2.0.4"
+    "skeleton-css": "^2.0.4",
+    "style-loader": "^2.0.0"
   }
 }

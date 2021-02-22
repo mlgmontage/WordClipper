@@ -12,4 +12,16 @@ module.exports = {
     compress: true,
     port: 8080,
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/,
+        use: ["file-loader"],
+      },
+    ],
+  },
 };

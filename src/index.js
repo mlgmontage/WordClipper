@@ -6,9 +6,8 @@ import "skeleton-css/css/skeleton.css";
 import "font-awesome/css/font-awesome.min.css";
 import "./styles.css";
 
-const title = "Hot module";
-const root = document.querySelector("#root");
+import App from "./App";
 
-ReactDom.render(<h1>{title}</h1>, root);
+ReactDom.render(<App />, document.querySelector("#root"));
 
 module.hot.accept();

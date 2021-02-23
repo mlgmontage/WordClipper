@@ -5,8 +5,26 @@ import { Link } from "react-router-dom";
 class Train extends Component {
   constructor(props) {
     super(props);
+    this.keyhandler = this.keyhandler.bind(this);
     this.previous = this.previous.bind(this);
     this.next = this.next.bind(this);
+  }
+
+  componentDidMount() {
+    document.addEventListener("keypress", this.keyhandler);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keypress", this.keyhandler);
+  }
+
+  keyhandler(event) {
+    if (event.key == "j") {
+      this.previous();
+    }
+    if (event.key == "l") {
+      this.next();
+    }
   }
 
   previous() {

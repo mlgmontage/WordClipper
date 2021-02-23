@@ -1,11 +1,35 @@
 import React, { Component } from "react";
 import data from "../../data/data";
+import { Link } from "react-router-dom";
 
 class Train extends Component {
+  constructor(props) {
+    super(props);
+    this.previous = this.previous.bind(this);
+    this.next = this.next.bind(this);
+  }
+
+  previous() {
+    if (this.state.index > 1) {
+      this.setState({
+        index: this.state.index - 1,
+      });
+    }
+  }
+
+  next() {
+    if (this.state.index < this.state.data.length - 1) {
+      this.setState({
+        index: this.state.index + 1,
+      });
+    }
+  }
+
   state = {
     index: 0,
     data,
   };
+
   render() {
     return (
       <div>
@@ -18,17 +42,21 @@ class Train extends Component {
           </div>
         </div>
         <div className="row controls" style={{ fontSize: "48px" }}>
-          <div className="five columns">
+          <div onClick={this.previous} className="five columns">
             <span className="fa fa-arrow-left"></span>
           </div>
 
           <div className="two columns" style={{ textAlign: "center" }}>
             <span className="fa fa-check"></span>
             <br />
-            <a className="fa fa-plus" href="./create.html"></a>
+            <Link className="fa fa-plus" to="/create"></Link>
           </div>
 
-          <div className="five columns" style={{ textAlign: "right" }}>
+          <div
+            onClick={this.next}
+            className="five columns"
+            style={{ textAlign: "right" }}
+          >
             <span className="fa fa-arrow-right"></span>
           </div>
         </div>

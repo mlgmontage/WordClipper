@@ -13,6 +13,9 @@ module.exports = {
     compress: true,
     port: 8080,
     hot: true,
+    historyApiFallback: {
+      index: "index.html",
+    },
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
   module: {

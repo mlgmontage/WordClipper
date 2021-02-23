@@ -1,9 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Splash from "./components/splash";
+import Splash from "./components/pages/splash";
 import Navigation from "./components/navigation";
-import Train from "./components/train";
-import Create from "./components/create";
+import Train from "./components/pages/train";
+import Create from "./components/pages/create";
+import Explore from "./components/pages/explore";
+import Archive from "./components/pages/archive";
 
 const App = () => (
   <div className="container">
@@ -18,6 +20,12 @@ const App = () => (
         </Route>
         <Route path="/create">
           <Create />
+        </Route>
+        <Route path="/explore">
+          <Explore />
+        </Route>
+        <Route path="/archive">
+          <Archive />
         </Route>
       </Switch>
     </Router>

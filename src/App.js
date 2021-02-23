@@ -1,11 +1,22 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Splash from "./components/splash";
 import Navigation from "./components/navigation";
+import Train from "./components/train";
 
 const App = () => (
   <div className="container">
-    <Navigation />
-    <Splash />
+    <Router>
+      <Navigation />
+      <Switch>
+        <Route path="/" exact>
+          <Splash />
+        </Route>
+        <Route path="/train">
+          <Train />
+        </Route>
+      </Switch>
+    </Router>
   </div>
 );
 

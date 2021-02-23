@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navigation = () => (
   <div className="row navigation">
@@ -20,9 +21,9 @@ const Navigation = () => (
 
     <div className="two columns">
       <div className="fa fa-university nav-icon"></div>
-      <a href="./train.html" className="nav-text">
+      <Link to="/train" className="nav-text">
         Train
-      </a>
+      </Link>
     </div>
     <div className="two columns">
       <div className="fa fa-bar-chart nav-icon"></div>

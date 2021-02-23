@@ -17,11 +17,11 @@ h6 {
 
 body {
   font-family: "Roboto";
-  background-color: #fee440 !important;
+  /* background-color: #fee440 !important; */
 }
 
 .input-box {
-  background-color: #fee440 !important;
+  /* background-color: #fee440 !important; */
   border: 1px solid #000;
   border-radius: 0;
   height: 450px;
@@ -56,11 +56,6 @@ body {
 
 .controls span {
   cursor: pointer;
-}
-
-/* Utils */
-.outline {
-  outline: 1px solid #f00;
 }
 
 a.fa {

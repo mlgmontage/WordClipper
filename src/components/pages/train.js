@@ -13,6 +13,7 @@ class Train extends Component {
     this.keyhandler = this.keyhandler.bind(this);
     this.previous = this.previous.bind(this);
     this.next = this.next.bind(this);
+    this.complete = this.complete.bind(this);
   }
 
   componentDidMount() {
@@ -31,6 +32,18 @@ class Train extends Component {
 
   componentWillUnmount() {
     document.removeEventListener("keypress", this.keyhandler);
+  }
+
+  complete(id) {
+    fetch(`${host}/api/words/${id}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "post",
+      body: JSON.stringify({ isCompleted: true }),
+    })
+      .then((response) => response.json())
+      .then(() => console.log("completed"));
   }
 
   keyhandler(event) {
@@ -62,6 +75,7 @@ class Train extends Component {
     index: 0,
     data: [
       {
+        _id: "",
         word: "",
         description: "",
       },
@@ -84,7 +98,12 @@ class Train extends Component {
           </div>
 
           <div className="two columns" style={{ textAlign: "center" }}>
-            <span className="fa fa-check"></span>
+            <span
+              onClick={() =>
+                this.complete(this.state.data[this.state.index]._id)
+              }
+              className="fa fa-check"
+            ></span>
             <br />
             <Link className="fa fa-plus" to="/create"></Link>
           </div>

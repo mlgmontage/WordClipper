@@ -7,7 +7,7 @@ class Explore extends Component {
   }
 
   state = {
-    data: [{ word: "", description: "" }],
+    data: [{ _id: "", word: "", description: "" }],
   };
 
   componentDidMount() {
@@ -25,7 +25,7 @@ class Explore extends Component {
       <div>
         <h2>Explore</h2>
         {this.state.data.map((item) => (
-          <div>
+          <div key={item._id}>
             <h4>{item.word}</h4>
             <div>{item.description}</div>
             <hr />

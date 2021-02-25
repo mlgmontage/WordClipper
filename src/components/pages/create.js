@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import host from "../../host";
 
 class Create extends Component {
   constructor(props) {
@@ -7,6 +8,11 @@ class Create extends Component {
     this.submit = this.submit.bind(this);
   }
 
+  state = {
+    word: "",
+    description: "",
+  };
+
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value,
@@ -14,13 +20,19 @@ class Create extends Component {
   }
 
   submit() {
+    fetch(`${host}/api/words/create`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        word: this.state.word,
+        description: this.state.description,
+      }),
+    });
+
     console.log(this.state.word + this.state.description);
   }
-
-  state = {
-    word: "",
-    description: "",
-  };
 
   render() {
     return (

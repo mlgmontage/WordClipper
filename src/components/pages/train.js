@@ -37,7 +37,7 @@ class Train extends Component {
   }
 
   previous() {
-    if (this.state.index > 1) {
+    if (this.state.index > 0) {
       this.setState({
         index: this.state.index - 1,
       });
@@ -61,6 +61,7 @@ class Train extends Component {
     return (
       <div>
         <div className="row square">
+          <h6>Counter: {this.state.index + 1}</h6>
           <div className="six columns">
             <h2>{this.state.data[this.state.index].word}</h2>
           </div>

@@ -30,6 +30,7 @@ class Create extends Component {
       body: JSON.stringify({
         word,
         description,
+        isCompleted: false,
       }),
     });
 
@@ -37,7 +38,6 @@ class Create extends Component {
       word: "",
       description: "",
     });
-    console.log(this.state.word + this.state.description);
   }
 
   render() {

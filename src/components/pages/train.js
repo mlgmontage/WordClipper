@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import data from "../../data/data";
+// import data from "../../data/data";
 import { Link } from "react-router-dom";
 import host from "../../host";
 
@@ -18,7 +18,9 @@ class Train extends Component {
     fetch(`${host}/api/words`)
       .then((response) => response.json())
       .then((json) => {
-        this.setState({ data: json });
+        if (json) {
+          this.setState({ data: json });
+        }
       });
     document.addEventListener("keypress", this.keyhandler);
   }
@@ -54,7 +56,12 @@ class Train extends Component {
 
   state = {
     index: 0,
-    data,
+    data: [
+      {
+        word: "",
+        description: "",
+      },
+    ],
   };
 
   render() {

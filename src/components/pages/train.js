@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import data from "../../data/data";
 import { Link } from "react-router-dom";
+import host from "../../host";
 
 class Train extends Component {
   constructor(props) {
@@ -11,6 +12,14 @@ class Train extends Component {
   }
 
   componentDidMount() {
+    /**
+     * * I can't use async/await syntax
+     */
+    fetch(`${host}/api/words`)
+      .then((response) => response.json())
+      .then((json) => {
+        this.setState({ data: json });
+      });
     document.addEventListener("keypress", this.keyhandler);
   }
 

@@ -18,7 +18,7 @@ class Archive extends Component {
     fetch(`${host}/api/words/archive`)
       .then((response) => response.json())
       .then((json) => {
-        if (json) {
+        if (json[0] != undefined) {
           this.setState({ data: json });
         }
       });

@@ -18,7 +18,7 @@ class Explore extends Component {
     fetch(`${host}/api/words`)
       .then((response) => response.json())
       .then((json) => {
-        if (json) {
+        if (json[0] != undefined) {
           this.setState({ data: json });
         }
       });

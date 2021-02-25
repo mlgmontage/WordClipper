@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import host from "../../host";
 
+/**
+ * TODO: Delete & Restore function
+ */
+
 class Archive extends Component {
   constructor(props) {
     super(props);

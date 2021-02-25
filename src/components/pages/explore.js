@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import host from "../../host";
 
+/**
+ * TODO: Delete function
+ */
+
 class Explore extends Component {
   constructor(props) {
     super(props);

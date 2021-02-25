@@ -62,10 +62,8 @@ class Train extends Component {
       <div>
         <div className="row square">
           <h6>Counter: {this.state.index + 1}</h6>
-          <div className="six columns">
-            <h2>{this.state.data[this.state.index].word}</h2>
-          </div>
-          <div className="six columns" style={{ fontSize: "18px" }}>
+          <h2>{this.state.data[this.state.index].word}</h2>
+          <div style={{ fontSize: "18px" }}>
             {this.state.data[this.state.index].description}
           </div>
         </div>

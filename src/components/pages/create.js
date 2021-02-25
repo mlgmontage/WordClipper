@@ -20,17 +20,23 @@ class Create extends Component {
   }
 
   submit() {
+    const word = this.state.word;
+    const description = this.state.description;
     fetch(`${host}/api/words/create`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        word: this.state.word,
-        description: this.state.description,
+        word,
+        description,
       }),
     });
 
+    this.setState({
+      word: "",
+      description: "",
+    });
     console.log(this.state.word + this.state.description);
   }
 
@@ -47,6 +53,7 @@ class Create extends Component {
                 onChange={this.handleChange}
                 name="word"
                 id="word"
+                value={this.state.word}
                 className="u-full-width input-box"
                 style={{ fontSize: 36 + "px", fontWeight: "bold" }}
               ></textarea>
@@ -58,6 +65,7 @@ class Create extends Component {
               <textarea
                 onChange={this.handleChange}
                 name="description"
+                value={this.state.description}
                 id="description"
                 className="u-full-width input-box"
               ></textarea>

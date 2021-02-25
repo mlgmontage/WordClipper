@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import host from "../../host";
 
+/**
+ * TODO: Loading screen when new word gets submitted
+ */
+
 class Create extends Component {
   constructor(props) {
     super(props);

@@ -1,8 +1,38 @@
 import React, { Component } from "react";
+import host from "../../host";
 
 class Explore extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  state = {
+    data: [{ word: "", description: "" }],
+  };
+
+  componentDidMount() {
+    fetch(`${host}/api/words`)
+      .then((response) => response.json())
+      .then((json) => {
+        if (json) {
+          this.setState({ data: json });
+        }
+      });
+  }
+
   render() {
-    return <div>Explore</div>;
+    return (
+      <div>
+        <h2>Explore</h2>
+        {this.state.data.map((item) => (
+          <div>
+            <h4>{item.word}</h4>
+            <div>{item.description}</div>
+            <hr />
+          </div>
+        ))}
+      </div>
+    );
   }
 }
 

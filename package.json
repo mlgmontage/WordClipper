@@ -25,6 +25,8 @@
     "react-dom": "^17.0.1",
     "react-hot-loader": "^4.13.0",
     "react-router-dom": "^5.2.0",
+    "sass": "^1.32.8",
+    "sass-loader": "10.1.1",
     "skeleton-css": "^2.0.4",
     "style-loader": "^2.0.0"
   }

@@ -26,22 +26,24 @@ class Create extends Component {
   submit() {
     const word = this.state.word;
     const description = this.state.description;
-    fetch(`${host}/api/words/create`, {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        word,
-        description,
-        isCompleted: false,
-      }),
-    });
+    if (word !== "" || description !== "") {
+      fetch(`${host}/api/words/create`, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          word,
+          description,
+          isCompleted: false,
+        }),
+      });
 
-    this.setState({
-      word: "",
-      description: "",
-    });
+      this.setState({
+        word: "",
+        description: "",
+      });
+    }
   }
 
   render() {

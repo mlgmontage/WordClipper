@@ -1,6 +1,5 @@
-/* 
-  TODO: This file should be rewritten in Sass in future.
-*/
+// Variables
+$yellow: #fee440;
 
 h1,
 h2,
@@ -17,11 +16,15 @@ h6 {
 
 body {
   font-family: "Roboto";
-  /* background-color: #fee440 !important; */
+  background-color: $yellow;
+}
+
+hr {
+  border-color: #000;
 }
 
 .input-box {
-  /* background-color: #fee440 !important; */
+  background-color: $yellow;
   border: 1px solid #000;
   border-radius: 0;
   height: 450px;

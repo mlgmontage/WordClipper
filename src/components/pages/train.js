@@ -1,11 +1,6 @@
 import React, { Component } from "react";
-// import data from "../../data/data";
 import { Link } from "react-router-dom";
 import host from "../../host";
-
-/**
- * TODO: Implement "complete" function
- */
 
 class Train extends Component {
   constructor(props) {

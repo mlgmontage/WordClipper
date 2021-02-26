@@ -7,6 +7,11 @@ import Create from "./components/pages/create";
 import Explore from "./components/pages/explore";
 import Archive from "./components/pages/archive";
 
+/**
+ * TODO: Transition to Semantic UI
+ * * First step is using only CSS, second transitioning to styled components
+ */
+
 const App = () => (
   <div className="container">
     <Router>

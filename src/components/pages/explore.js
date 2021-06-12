@@ -1,43 +1,35 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import host from "../../host";
 
 /**
  * TODO: Delete function
  */
 
-class Explore extends Component {
-  constructor(props) {
-    super(props);
-  }
+const Explore = () => {
+  const [data, setData] = useState([{ _id: "", word: "", description: "" }]);
 
-  state = {
-    data: [{ _id: "", word: "", description: "" }],
-  };
-
-  componentDidMount() {
+  useEffect(() => {
     fetch(`${host}/api/words`)
       .then((response) => response.json())
       .then((json) => {
         if (json[0] != undefined) {
-          this.setState({ data: json });
+          setData(json);
         }
       });
-  }
+  }, []);
 
-  render() {
-    return (
-      <div>
-        <h2>Explore</h2>
-        {this.state.data.map((item) => (
-          <div key={item._id}>
-            <h4>{item.word}</h4>
-            <div>{item.description}</div>
-            <hr />
-          </div>
-        ))}
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <h2>Explore</h2>
+      {data.map((item) => (
+        <div key={item._id}>
+          <h4>{item.word}</h4>
+          <div>{item.description}</div>
+          <hr />
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default Explore;

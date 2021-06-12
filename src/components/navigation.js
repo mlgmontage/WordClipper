@@ -1,42 +1,35 @@
 import React from "react";
+import { Menu, MenuItem, Icon, GridRow, GridColumn } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 const Navigation = () => (
-  <div className="row navigation">
-    <div className="four columns">
-      <Link className="logo" to="/">
-        <span className="fa fa-paperclip" style={{ fontSize: "30px" }}></span>{" "}
-        <span
-          style={{
-            fontSize: "24px",
-            fontWeight: "bold",
-          }}
-        >
-          WordClipper
-        </span>
-      </Link>
-    </div>
+  <GridRow>
+    <GridColumn>
+      <Menu>
+        <MenuItem>
+          <Link to="/">
+            <Icon name="paperclip" />
+            WordClipper
+          </Link>
+        </MenuItem>
 
-    <div className="two columns">
-      <div className="fa fa-search nav-icon"></div>{" "}
-      <Link to="/explore" className="nav-text">
-        Explore
-      </Link>
-    </div>
+        <MenuItem>
+          <Icon name="search" />
+          <Link to="/explore">Explore</Link>
+        </MenuItem>
 
-    <div className="two columns">
-      <div className="fa fa-university nav-icon"></div>{" "}
-      <Link to="/train" className="nav-text">
-        Train
-      </Link>
-    </div>
-    <div className="two columns">
-      <div className="fa fa-archive nav-icon"></div>{" "}
-      <Link to="/archive" className="nav-text">
-        Archive
-      </Link>
-    </div>
-  </div>
+        <MenuItem>
+          <Icon name="football ball" />
+          <Link to="/train">Train</Link>
+        </MenuItem>
+
+        <MenuItem>
+          <Icon name="file" />
+          <Link to="/archive">Archive</Link>
+        </MenuItem>
+      </Menu>
+    </GridColumn>
+  </GridRow>
 );
 
 export default Navigation;

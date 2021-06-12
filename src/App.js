@@ -6,6 +6,7 @@ import Train from "./components/pages/train";
 import Create from "./components/pages/create";
 import Explore from "./components/pages/explore";
 import Archive from "./components/pages/archive";
+import { GridRow, Grid } from "semantic-ui-react";
 
 /**
  * TODO: Transition to Semantic UI
@@ -13,18 +14,20 @@ import Archive from "./components/pages/archive";
  */
 
 const App = () => (
-  <div className="container">
+  <Grid>
     <Router>
       <Navigation />
-      <Switch>
-        <Route path="/" component={Splash} exact />
-        <Route path="/train" component={Train} />
-        <Route path="/create" component={Create} />
-        <Route path="/explore" component={Explore} />
-        <Route path="/archive" component={Archive} />
-      </Switch>
+      <GridRow>
+        <Switch>
+          <Route path="/" component={Splash} exact />
+          <Route path="/train" component={Train} />
+          <Route path="/create" component={Create} />
+          <Route path="/explore" component={Explore} />
+          <Route path="/archive" component={Archive} />
+        </Switch>
+      </GridRow>
     </Router>
-  </div>
+  </Grid>
 );
 
 export default App;

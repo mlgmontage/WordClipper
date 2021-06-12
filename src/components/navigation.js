@@ -14,18 +14,23 @@ const Navigation = () => (
         </MenuItem>
 
         <MenuItem>
-          <Icon name="search" />
-          <Link to="/explore">Explore</Link>
+          <Link to="/explore">
+            <Icon name="search" />
+            Explore
+          </Link>
         </MenuItem>
 
         <MenuItem>
-          <Icon name="football ball" />
-          <Link to="/train">Train</Link>
+          <Link to="/train">
+            <Icon name="football ball" />
+            Train
+          </Link>
         </MenuItem>
 
         <MenuItem>
-          <Icon name="file" />
-          <Link to="/archive">Archive</Link>
+          <Link to="/archive">
+            <Icon name="file" /> Archive
+          </Link>
         </MenuItem>
       </Menu>
     </GridColumn>

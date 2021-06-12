@@ -45,12 +45,12 @@ const Create = () => {
           <Form onSubmit={submit}>
             <FormField>
               <label>Word</label>
-              <input {...word.bind} value={word.value} id="word" />
+              <input required {...word.bind} value={word.value} id="word" />
             </FormField>
 
             <FormField>
               <label>Description</label>
-              <input {...description.bind} value={description.value} />
+              <input required {...description.bind} value={description.value} />
             </FormField>
 
             <Button type="submit">

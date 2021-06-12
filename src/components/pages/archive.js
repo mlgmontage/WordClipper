@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
 import host from "../../host";
-import { Grid, GridColumn, GridRow, Divider } from "semantic-ui-react";
+import {
+  Grid,
+  GridColumn,
+  GridRow,
+  Card,
+  CardGroup,
+  CardContent,
+  CardDescription,
+  CardHeader,
+} from "semantic-ui-react";
 
 /**
  * TODO: Delete & Restore function
@@ -22,15 +31,18 @@ const Archive = () => {
   return (
     <Grid>
       <GridRow centered columns="2">
-        <h2>Archive</h2>
         <GridColumn>
-          {data.map((item) => (
-            <div key={item._id}>
-              <h4>{item.word}</h4>
-              <div>{item.description}</div>
-              <Divider />
-            </div>
-          ))}
+          <h2>Archive</h2>
+          <CardGroup>
+            {data.map((item) => (
+              <Card key={item._id}>
+                <CardContent>
+                  <CardHeader>{item.word}</CardHeader>
+                  <CardDescription>{item.description}</CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </CardGroup>
         </GridColumn>
       </GridRow>
     </Grid>

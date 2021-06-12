@@ -6,6 +6,7 @@ import {
   GridColumn,
   GridRow,
   Button,
+  ButtonGroup,
   Icon,
   Divider,
 } from "semantic-ui-react";
@@ -71,14 +72,17 @@ const Train = () => {
   return (
     <Grid>
       <GridRow centered columns="2">
+        <h3>
+          {index + 1}/{data.length}
+        </h3>
         <GridColumn>
           <div>
             <h2>{data[index].word}</h2>
             <h3>{data[index].description}</h3>
           </div>
 
-          <div>
-            <Divider />
+          <Divider />
+          <ButtonGroup>
             <Button onClick={previous}>
               <Icon name="arrow left" /> Previous
             </Button>
@@ -96,7 +100,7 @@ const Train = () => {
             <Button onClick={next}>
               <Icon name="arrow right" /> Next
             </Button>
-          </div>
+          </ButtonGroup>
         </GridColumn>
       </GridRow>
     </Grid>

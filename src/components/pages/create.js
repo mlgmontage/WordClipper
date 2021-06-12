@@ -1,21 +1,14 @@
 import React, { useState } from "react";
 import host from "../../host";
+import formInput from "../hooks/formInput";
 
 /**
  * TODO: Loading screen when new word gets submitted
  */
 
 const Create = () => {
-  const [word, setWord] = useState("");
-  const [description, setDescription] = useState("");
-
-  const handleWordChange = (e) => {
-    setWord(e.target.value);
-  };
-
-  const handleDescriptionChange = (e) => {
-    setDescription(e.target.value);
-  };
+  const word = formInput("");
+  const description = formInput("");
 
   const submit = () => {
     if (word !== "" || description !== "") {
@@ -25,13 +18,13 @@ const Create = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          word,
-          description,
+          word: word.value,
+          description: description.value,
           isCompleted: false,
         }),
       }).then((res) => {
-        setDescription("");
-        setWord("");
+        description.setValue("");
+        word.setValue("");
       });
     }
   };
@@ -45,8 +38,8 @@ const Create = () => {
               <strong>Word</strong>
             </label>
             <textarea
-              onChange={handleWordChange}
-              value={word}
+              {...word.bind}
+              value={word.value}
               id="word"
               className="u-full-width input-box"
               style={{ fontSize: 36 + "px", fontWeight: "bold" }}
@@ -57,8 +50,8 @@ const Create = () => {
               <strong>Description</strong>
             </label>
             <textarea
-              onChange={handleDescriptionChange}
-              value={description}
+              {...description.bind}
+              value={description.value}
               id="description"
               className="u-full-width input-box"
             ></textarea>

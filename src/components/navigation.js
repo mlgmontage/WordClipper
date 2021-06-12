@@ -1,9 +1,9 @@
 import React from "react";
-import { Menu, MenuItem, Icon, GridRow, GridColumn } from "semantic-ui-react";
+import { Menu, MenuItem, Icon, Grid, GridColumn } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 const Navigation = () => (
-  <GridRow>
+  <Grid>
     <GridColumn>
       <Menu>
         <MenuItem>
@@ -29,7 +29,7 @@ const Navigation = () => (
         </MenuItem>
       </Menu>
     </GridColumn>
-  </GridRow>
+  </Grid>
 );
 
 export default Navigation;

@@ -14,20 +14,16 @@ import { GridRow, Grid } from "semantic-ui-react";
  */
 
 const App = () => (
-  <Grid>
-    <Router>
-      <Navigation />
-      <GridRow>
-        <Switch>
-          <Route path="/" component={Splash} exact />
-          <Route path="/train" component={Train} />
-          <Route path="/create" component={Create} />
-          <Route path="/explore" component={Explore} />
-          <Route path="/archive" component={Archive} />
-        </Switch>
-      </GridRow>
-    </Router>
-  </Grid>
+  <Router>
+    <Navigation />
+    <Switch>
+      <Route path="/" component={Splash} exact />
+      <Route path="/train" component={Train} />
+      <Route path="/create" component={Create} />
+      <Route path="/explore" component={Explore} />
+      <Route path="/archive" component={Archive} />
+    </Switch>
+  </Router>
 );
 
 export default App;

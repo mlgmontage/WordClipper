@@ -1,6 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import host from "../../host";
 import formInput from "../hooks/formInput";
+import {
+  Grid,
+  GridColumn,
+  GridRow,
+  Form,
+  FormField,
+  Button,
+  Icon,
+} from "semantic-ui-react";
 
 /**
  * TODO: Loading screen when new word gets submitted
@@ -30,42 +39,27 @@ const Create = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={submit}>
-        <div className="row">
-          <div className="six columns">
-            <label htmlFor="word">
-              <strong>Word</strong>
-            </label>
-            <textarea
-              {...word.bind}
-              value={word.value}
-              id="word"
-              className="u-full-width input-box"
-              style={{ fontSize: 36 + "px", fontWeight: "bold" }}
-            ></textarea>
-          </div>
-          <div className="six columns">
-            <label htmlFor="description">
-              <strong>Description</strong>
-            </label>
-            <textarea
-              {...description.bind}
-              value={description.value}
-              id="description"
-              className="u-full-width input-box"
-            ></textarea>
-          </div>
-        </div>
-        <div className="row" style={{ textAlign: "center" }}>
-          <span
-            onClick={submit}
-            className="fa fa-paperclip"
-            style={{ fontSize: 48 + "px", cursor: "pointer" }}
-          ></span>
-        </div>
-      </form>
-    </div>
+    <Grid>
+      <GridRow centered columns="2">
+        <GridColumn>
+          <Form onSubmit={submit}>
+            <FormField>
+              <label>Word</label>
+              <input {...word.bind} value={word.value} id="word" />
+            </FormField>
+
+            <FormField>
+              <label>Description</label>
+              <input {...description.bind} value={description.value} />
+            </FormField>
+
+            <Button type="submit">
+              <Icon name="paperclip" /> +Add
+            </Button>
+          </Form>
+        </GridColumn>
+      </GridRow>
+    </Grid>
   );
 };
 

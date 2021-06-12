@@ -16,7 +16,7 @@ const Explore = () => {
           setData(json);
         }
       });
-  });
+  }, []);
 
   return (
     <div>

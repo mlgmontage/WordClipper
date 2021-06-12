@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import host from "../../host";
+import {
+  Grid,
+  GridColumn,
+  GridRow,
+  Button,
+  Icon,
+  Divider,
+} from "semantic-ui-react";
 
 const Train = () => {
   const [index, setIndex] = useState(0);
@@ -61,35 +69,37 @@ const Train = () => {
   };
 
   return (
-    <div>
-      <div className="row square">
-        <h6>Counter: {index + 1}</h6>
-        <h2>{data[index].word}</h2>
-        <div style={{ fontSize: "18px" }}>{data[index].description}</div>
-      </div>
-      <div className="row controls" style={{ fontSize: "48px" }}>
-        <div onClick={previous} className="five columns">
-          <span className="fa fa-arrow-left"></span>
-        </div>
+    <Grid>
+      <GridRow centered columns="2">
+        <GridColumn>
+          <div>
+            <h2>{data[index].word}</h2>
+            <h3>{data[index].description}</h3>
+          </div>
 
-        <div className="two columns" style={{ textAlign: "center" }}>
-          <span
-            onClick={() => complete(data[index]._id)}
-            className="fa fa-check"
-          ></span>
-          <br />
-          <Link className="fa fa-plus" to="/create"></Link>
-        </div>
+          <div>
+            <Divider />
+            <Button onClick={previous}>
+              <Icon name="arrow left" /> Previous
+            </Button>
 
-        <div
-          onClick={next}
-          className="five columns"
-          style={{ textAlign: "right" }}
-        >
-          <span className="fa fa-arrow-right"></span>
-        </div>
-      </div>
-    </div>
+            <Button onClick={() => complete(data[index]._id)}>
+              <Icon name="check" /> Complete
+            </Button>
+
+            <Button>
+              <Link to="/create">
+                <Icon name="plus" /> Create
+              </Link>
+            </Button>
+
+            <Button onClick={next}>
+              <Icon name="arrow right" /> Next
+            </Button>
+          </div>
+        </GridColumn>
+      </GridRow>
+    </Grid>
   );
 };
 

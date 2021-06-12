@@ -17,21 +17,11 @@ const App = () => (
     <Router>
       <Navigation />
       <Switch>
-        <Route path="/" exact>
-          <Splash />
-        </Route>
-        <Route path="/train">
-          <Train />
-        </Route>
-        <Route path="/create">
-          <Create />
-        </Route>
-        <Route path="/explore">
-          <Explore />
-        </Route>
-        <Route path="/archive">
-          <Archive />
-        </Route>
+        <Route path="/" component={Splash} exact />
+        <Route path="/train" component={Train} />
+        <Route path="/create" component={Create} />
+        <Route path="/explore" component={Explore} />
+        <Route path="/archive" component={Archive} />
       </Switch>
     </Router>
   </div>
